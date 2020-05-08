@@ -1,0 +1,297 @@
+$mainColor: #df0021;
+$subColor: rgb(41, 41, 41);
+
+body, html{
+    background: url(../img/background.jpg) center center fixed;
+    background-size: cover;
+    scroll-behavior: smooth;
+}
+header{
+    padding-top: 10px;
+    img{
+        width: 100px;
+    }
+    nav{
+        float: right;
+        ul{
+            width: 250px;
+            list-style: none;    
+            display: flex;
+            flex-direction: row;
+            overflow: hidden;
+            flex-wrap: nowrap;
+            justify-content: space-between;
+            margin-top: 20px;
+            color: rgb(255, 255, 255);
+            font-size: 15px;
+            li:hover{
+                cursor: pointer;
+                border-bottom: 2px solid $mainColor
+            }
+        }
+    }
+    .fa-bars{
+        font-size: 25px;
+        float: right;
+        margin: 20px 20px 0px 0px;
+        color: rgba(245, 245, 245, 0.822);
+        width: 20px;
+        cursor: pointer;
+        z-index: 10;
+        &:hover{
+            color: white
+        }
+    }
+    .fa-angle-double-down{
+        font-size: 29px;
+        color: $mainColor;
+        opacity: 0.6;
+        position: absolute;
+        top: 95%;
+        left: 50%;
+        transform: (-50%, -95%);
+        margin-top: -10px;
+        &:hover{
+            opacity: 1;
+            cursor: pointer;
+            margin-top: 0px
+        }
+    }
+}
+aside{
+    width: 0;
+    height: 100%;
+    position: fixed;
+    left: 0;
+    top: 0;
+    background-color: rgba(255, 255, 255, 0.973);
+    z-index: 20;
+    .fa-times{
+        font-size: 30px;
+        float: right;
+        margin: 30px;
+        cursor: pointer;
+        color: $subColor;
+        display: none
+    }
+    .subCont{
+        @extend %centerHV;
+        background-color: white;
+        width: 30%;
+        height: 30%;
+        border-radius: 10px;
+        border-bottom: 4px solid $subColor;
+        display: none;
+        ul{
+            @extend %centerHV;
+            list-style: none;
+            padding: 0;
+            font-size: 4vmin;
+            text-align: center;
+            li:hover{
+                cursor: pointer;
+                width: 90%;
+                font-weight: 600;
+                font-size: 4.5vmin;
+                padding-left: 10px;
+                color: $mainColor
+            }
+        }
+    }
+}
+.sec1{
+    @extend %centerHV;
+    width: 100%;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.055);
+    height: auto;
+    padding: 4vmin 0 4vmin 0;
+    .sec1Head{
+        font-size: 10vmin;
+        font-weight: 200;
+        text-shadow: 1px 1px 0px solid $mainColor;
+        color: rgb(255, 255, 255);
+    }
+    hr{
+        border: none;
+    }
+    p{
+        color: white;
+        font-size: 15px;
+        font-weight: 600;
+    }
+}
+.sec2{
+    background-color: rgb(255, 255, 255);
+    text-align: center;
+    overflow: auto;
+    h3{
+        text-align: center;
+        padding: 20px 0 0 0;
+    }
+    .cardMem{
+        width: fit-content;
+        height: fit-content;
+        padding:0 0 10px 0;
+        background-color: white;
+        display: inline-block;
+        margin: 20px;
+        .memPhoto{
+            width: 200px;
+            height: 200px;
+            border-bottom: 2px solid $mainColor;
+            filter: grayscale(100%);
+            &:hover{
+                filter: grayscale(0);
+            }
+        }
+        .rotateimg{
+            transform: rotate(90deg);
+            border-bottom: none;
+            border-right: 2px solid $mainColor;
+        }
+        span{
+            display: block;
+            text-align: center;
+        }
+        .name{
+            font-size: 17px;
+            font-weight: 600;
+        }
+        .position{
+            font-size: 14px;
+        }
+    }
+}
+.sec3{
+    padding: 20px;
+    color: white;
+    .mission{
+        h3{
+            font-size: 30px;
+            font-weight: 200;
+        }
+        .missionCont{
+            opacity: 0.7;
+            font-size: 14px;
+            margin-top: 20px;
+            padding-left: 15px;
+            border-left: 2px solid $mainColor;
+            margin-bottom: 30px;
+        }
+    }
+}
+footer{
+    .info{
+        height: auto;
+        background-color: white;
+        padding: 15px 0 15px 15px;
+        h5{
+            font-size: 16px;
+        }
+        a{
+            color: $mainColor;
+            opacity: 0.7;
+            text-decoration: none;
+            &:hover{
+                opacity: 1
+            }
+        }
+        .icons{
+            .fa{
+                font-size: 25px;;
+            }
+        }
+        .btn{
+            float: right;
+            margin: -45px 45px 0 0;
+        }
+    }
+    .copyRight{
+        h3{
+            text-align: center;
+            color: rgba(255, 255, 255, 0.767);
+            font-size: 13px;
+            padding-top: 5px
+        }
+    }
+}
+.top{
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    background-color: $mainColor;
+    color: white;
+    height: 40px;
+    display: none;
+}
+.contSec{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #df0021c4;
+    display: none;
+    .contactInfo{
+        background-color: $mainColor;
+        width: 50%;
+        height: fit-content;
+        border-radius: 20px;
+        @extend %centerHV;
+        text-align: center;
+        border-bottom: 4px solid $subColor;
+        h3{
+            color: white;
+            margin-top: 10px;
+            font-size: 25px;
+            margin-bottom: 20px;
+        }
+        .phone{
+            width: 100%;
+            text-align: center;
+            margin-bottom: 10px;
+            .fa-phone-square, .fa-envelope-o{
+                color: rgb(255,255,255);
+                font-size: 4vmin;
+                margin: 10px 0 20px 20px;
+                display: inline;
+            }
+            .fa-phone-square{
+                margin-left: -15px;
+            }
+            h3{
+                font-size: 2.5vmin;
+                margin: -10px 0 0 15px;
+                display: inline;
+            }
+        }
+    }
+    .btn-outline-light{
+        float: right;
+        margin: 40px;
+
+    }
+}
+%centerHV{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+@media only screen and (min-width: 830px){
+    nav{
+        display: block
+    }
+    .fa-bars{
+        display: none
+    }
+}
+@media only screen and (max-width: 830px){
+    nav{
+        display: none;
+    }
+    .fa-bars{
+        display: block
+    }
+}
